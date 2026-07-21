@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP HACKER PRANK</title><style>
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(130,0,255,.22), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(0,255,180,.12), transparent 30%);
+    z-index: -1;
+}
+
+.container {
+    width: 92%;
+    max-width: 500px;
+    margin: 70px auto;
+    padding: 28px 22px;
+    background: rgba(15,15,15,.95);
+    border: 1px solid #8b00ff;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(128,0,255,.35);
+    text-align: center;
+}
+
+.logo {
+    font-size: 55px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    color: #b84cff;
+    font-size: 28px;
+    margin: 8px 0;
+    text-shadow: 0 0 12px #8b00ff;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 28px;
+}
+
+input, select {
+    width: 100%;
+    padding: 16px;
+    margin: 9px 0;
+    border-radius: 12px;
+    border: 1px solid #6f00ff;
+    background: #111;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 17px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 13px;
+    background: linear-gradient(90deg, #7300ff, #b000ff);
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 0 18px rgba(150,0,255,.45);
+}
+
+button:active {
+    transform: scale(.97);
+}
+
+.hidden {
+    display: none;
+}
+
+.warning {
+    margin-top: 18px;
+    color: #888;
+    font-size: 12px;
+}
+
+.loading-box {
+    margin-top: 25px;
+}
+
+.progress {
+    width: 100%;
+    height: 15px;
+    background: #222;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 18px;
+}
+
+.bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #7b00ff, #00ffc8);
+    transition: width .4s;
+}
+
+.status {
+    margin-top: 20px;
+    color: #00ffc8;
+    min-height: 25px;
+}
+
+.success {
+    font-size: 26px;
+    color: #00ffc8;
+    text-shadow: 0 0 15px #00ffc8;
+    margin-top: 20px;
+}
+
+.prank {
+    font-size: 34px;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: shake .5s infinite alternate;
+}
+
+@keyframes shake {
+    from { transform: rotate(-2deg); }
+    to { transform: rotate(2deg); }
+}
+
+.footer {
+    margin-top: 25px;
+    color: #555;
+    font-size: 12px;
+}
+</style></head><body><div class="container" id="page1"><div class="logo">💻</div>
+
+<h1>HP HACKER TOOL</h1>
+
+<div class="subtitle">
+    Masukkan data target untuk memulai proses...
+</div>
+
+<input type="text" id="nama" placeholder="Masukkan nama pemilik HP">
+
+<input type="text" id="hp" placeholder="Masukkan merek / tipe HP">
+
+<button onclick="keHalaman2()">
+    ⚡ MULAI RETAS HP
+</button>
+
+<div class="warning">
+    ⚠️ Sistem sedang menunggu target...
+</div>
+
+<div class="footer">
+    Advanced Security Simulation System
+</div>
+
+</div><div class="container hidden" id="page2"><div class="logo">🛠️</div>
+
+<h1>PILIH JENIS RETASAN</h1>
+
+<p id="targetInfo" style="color:#aaa;"></p>
+
+<select id="jenis">
+    <option>🔓 Buka Kunci Layar</option>
+    <option>📱 Akses Sistem HP</option>
+    <option>📂 Scan File Rahasia</option>
+    <option>🧠 Analisis Data Target</option>
+    <option>⚡ Full System Hack</option>
+</select>
+
+<button onclick="mulaiRetas()">
+    🚀 RETAS SEKARANG
+</button>
+
+<div class="footer">
+    Jangan matikan sistem selama proses berlangsung...
+</div>
+
+</div><div class="container hidden" id="page3"><div class="logo">☠️</div>
+
+<h1>PROSES RETASAN</h1>
+
+<p id="targetLoading" style="color:#aaa;"></p>
+
+<div class="loading-box">
+
+    <div id="status" class="status">
+        Menghubungkan ke sistem target...
+    </div>
+
+    <div class="progress">
+        <div class="bar" id="bar"></div>
+    </div>
+
+    <h2 id="percent">0%</h2>
+
+</div>
+
+</div><div class="container hidden" id="page4"><div class="logo">🎉</div>
+
+<h1 class="success">SISTEM BERHASIL DIRETAS!</h1>
+
+<p id="resultText" style="color:#aaa;"></p>
+
+<div class="prank">
+    😂 PRANK BRO 😂
+</div>
+
+<p style="color:#777; margin-top:20px;">
+    HP kamu aman jir 😭<br>
+    Ini cuma simulasi prank HTML.
+</p>
+
+<button onclick="location.reload()">
+    🔄 PRANK LAGI
+</button>
+
+</div><script>
+
+let namaTarget = "";
+let hpTarget = "";
+
+function keHalaman2() {
+
+    namaTarget = document.getElementById("nama").value;
+    hpTarget = document.getElementById("hp").value;
+
+    if (namaTarget === "" || hpTarget === "") {
+        alert("Isi nama dan HP target dulu jir 😭");
+        return;
+    }
+
+    document.getElementById("page1").classList.add("hidden");
+    document.getElementById("page2").classList.remove("hidden");
+
+    document.getElementById("targetInfo").innerHTML =
+    "Target terdeteksi: <b>" + namaTarget + "</b><br>" +
+    "Perangkat: <b>" + hpTarget + "</b>";
+}
+
+function mulaiRetas() {
+
+    document.getElementById("page2").classList.add("hidden");
+    document.getElementById("page3").classList.remove("hidden");
+
+    document.getElementById("targetLoading").innerHTML =
+    "Target: " + namaTarget + " | Perangkat: " + hpTarget;
+
+    let progress = 0;
+
+    let proses = setInterval(function() {
+
+        progress += Math.floor(Math.random() * 12) + 5;
+
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(proses);
+
+            setTimeout(function() {
+
+                document.getElementById("page3").classList.add("hidden");
+                document.getElementById("page4").classList.remove("hidden");
+
+                document.getElementById("resultText").innerHTML =
+                "Target <b>" + namaTarget +
+                "</b> menggunakan <b>" + hpTarget +
+                "</b> telah berhasil diproses.";
+
+            }, 900);
+        }
+
+        document.getElementById("bar").style.width = progress + "%";
+        document.getElementById("percent").innerHTML = progress + "%";
+
+        let status = document.getElementById("status");
+
+        if (progress < 30) {
+            status.innerHTML = "🔍 Mencari akses sistem...";
+        } else if (progress < 60) {
+            status.innerHTML = "🔐 Menembus sistem keamanan...";
+        } else if (progress < 85) {
+            status.innerHTML = "📂 Memindai data perangkat...";
+        } else {
+            status.innerHTML = "⚡ Menyelesaikan proses retasan...";
+        }
+
+    }, 700);
+}
+
+</script></body>
+</html>
